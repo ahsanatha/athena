@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-10 col-md-8 col-lg-6">
+      <!-- Form -->
+      <form class="form-example" action="" method="post">
+        <a href="/"><h1 class="text-dark">TA Track Reccomender</h1></a>
+        <p class="description">a prototype of reccomender system based on how "enjoy" the student learn a topic. Please
+          make sure you fill <a href="https://forms.gle/P37zGgKJgKocBVZy5" target="_blank">this form</a> before checking
+          you NIM.
+        </p>
+        {% if res.error %}
+        <div class="alert alert-danger" role="alert">
+          {{res.error}} kamu udah ngisi <a href="https://forms.gle/P37zGgKJgKocBVZy5" target="_blank">form ini</a>
+          belum?
+        </div>
+        {% else %}
+        <h5>TA Track Priority:</h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Reccomendation Percentage</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in res %}
+            <tr>
+              <td>{{ i }}</td>
+              <td>{{'{:.2f}'.format(res[i])}}%</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+        <p class="copyright">made with ❤ by <a href="http://himaif.bstage.me/">AKD HIMA IF 2020</a>.</p>
+      </form>
+      <!-- Form end -->
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

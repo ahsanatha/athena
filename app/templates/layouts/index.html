@@ -6,7 +6,29 @@ Home - {{ super() }}
 
 
 {% block content %}
-<h1>Hello World</h1>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <!-- Form -->
+            <form class="form-example" action="/check" method="post">
+                <a href="/"><h1 class="text-dark">TA Track Reccomender</h1></a>
+                <p class="description">a prototype of reccomender system based on how "enjoy" the student learn a topic.
+                    Please
+                    make sure you fill <a href="https://forms.gle/P37zGgKJgKocBVZy5" target="_blank">this form</a>
+                    before checking you NIM.
+                </p>
+                <!-- Input fields -->
+                <div class="form-group">
+                    <input type="text" class="form-control username" id="nim" placeholder="NIM" name="nim">
+                </div>
+                <button type="submit" class="btn btn-primary btn-customized">Check</button>
+                <!-- End input fields -->
+                <p class="copyright ">made with ❤ by <a href="http://himaif.bstage.me/">AKD HIMA IF 2020</a>.</p>
+            </form>
+            <!-- Form end -->
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
