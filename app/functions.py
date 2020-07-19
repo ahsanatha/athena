@@ -8,7 +8,7 @@ MAX_RATING = 5
 
 def getNIM(nim):
     print('API Called :(')
-    # response = requests.get('https://v2-api.sheety.co/387597a00c54c8555a31efa648221b3e/infoTa/formResponses1', headers={'Authorization': 'Bearer tupai-terbang'})
+    response = requests.get('https://v2-api.sheety.co/387597a00c54c8555a31efa648221b3e/infoTa/formResponses1', headers={'Authorization': 'Bearer tupai-terbang'})
     assert response.status_code == 200
     assert type(nim) == int
     mks = [i for i in response.json()['formResponses1'] if i['nim'] == nim]
