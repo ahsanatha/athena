@@ -13,7 +13,7 @@ def getNIM(nim):
     assert type(nim) == int
     mks = [i for i in response.json()['formResponses1'] if i['nim'] == nim]
     return mks
-    
+
 def getSummary(nim):
     mks = getNIM(nim)
     # mks = [{'id': 2, 'timestamp': '19/07/2020 2:14:28', 'nim': 1301174068, 'kalkulusIb': 3, 'logikaMatematikaA': 4, 'dasarAlgoritmaDanPemrograman': 1, 'matematikaDiskritA': 3, 'kalkulusIib': 4, 'pemodelanBasisData': 2, 'sistemDigital': 4, 'strukturData': 2, 'matriksDanRuangVektor': 5, 'probabilitasDanStatistikaA': 2, 'pemrogramanBerorientasiObyekA': 5, 'analisisDanPerancanganPerangkatLunak': 2, 'sistemBasisData': 4, 'desainDanAnalisisAlgoritma': 4, 'organisasiDanArsitekturKomputer': 4, 'teoriBahasaDanAutomata': 2, 'jaringanKomputer': 3, 'kecerdasanBuatan': 2, 'sistemOperasiA': 4, 'pemrogramanWeb': 3, 'implementasiDanPengujianPerangkatLunak': 2, 'dasarPemodelanDanSimulasi': 3, 'interaksiManusiaDanKomputerA': 4, 'sistemParalelDanTerdistribusi': 3, 'pembelajaranMesin': 2, 'inginMemilihTrackTaYangMana?': 'Advanced AI'}]
@@ -26,7 +26,7 @@ def getSummary(nim):
         keys = [i.lower() for i in rule[track]]
         keys = [''.join([t.capitalize() if i != 0 else t for i,t in enumerate(m.split())]) for m in keys]
         val = [mks.get(key) for key in keys]
-        summary[track] = sum(val) / (len(track) * MAX_RATING)
+        summary[track] = sum(val) / (len(rule[track]) * MAX_RATING)
     print(summary)
     total = sum(summary.values())
     for k in summary:
