@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+How - {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<div class="row justify-content-start align-items-start my-3">
+    <h3>How this system works?</h3>
+    <p class="text-justify">
+        Untuk versi Alpha saat ini kami menggunakan rules-based system untuk menentukan prioritas setiap track tugas akhir.
+        Untuk setiap track telah di definisikan beberapa mata kuliah yang mendukung untuk track tersebut.
+    </p>
+    <img src="{{ url_for('static', filename='img/rules.png') }}">
+    <br>
+    <p class="text-justify"> 
+        Rules ini di didefinisikan dengan mempertimbangkan diagram kurikulum 2020.
+    </p>
+    <h3>What Next?</h3>
+    <p class="text-justify">
+        Dengan bertambahnya data di database kami, kami dapat membuat model yang menggeneralisir pertimbangan prioritas 
+        dengan menggunakan pendekatan machine learning.
+    </p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

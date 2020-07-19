@@ -14,6 +14,14 @@ def create_app(test_config=None):
     def index():
         return render_template('layouts/index.html')
 
+    @app.route('/how', methods=['GET'])
+    def how():
+        return render_template('layouts/how.html')
+
+    @app.route('/why', methods=['GET'])
+    def why():
+        return render_template('layouts/why.html')    
+
     @app.route('/check',methods=['POST'])
     def redirectCheck():
         return redirect("/check/"+str(request.form['nim']))

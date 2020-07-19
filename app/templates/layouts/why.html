@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Why - {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<div class="row justify-content-start align-items-start my-3">
+    <h3>Why we make this?</h3>
+    <p class="text-justify">
+        Perubahan kurikulum 2016 ke kurikulum 2020 mentrigger kami untuk membuat ini. 
+        Sebuah sistem yang diharapkan dapat membantu teman-teman mahasiswa untuk menentukan topik tugas akhir yang akan diambil.
+        Target pengguna dari aplikasi ini adalah mahasiswa tingkat 3 yang akan mengambil kelas penulisan proposal.
+    </p>
+    <p>Regardless seberapa banyak data ataupun seberapa akurat hasil rekomendasi sistem ini, ini adalah project yang menyenangkan untuk dibuat. 
+        Semoga sistem ini dapat terus diperbaharui setiap generasi HIMA IF.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

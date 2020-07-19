@@ -1,0 +1,8 @@
+{
+    "Advanced AI" : ["Matriks dan Ruang Vektor","Kalkulus IIB",
+        "Probabilitas dan Statistika A","Pembelajaran Mesin","Kecerdasan Buatan"],
+    "Modelling and Simulation" : ["Desain dan Analisis Algoritma","Teori Bahasa dan Automata",
+        "Dasar Pemodelan dan Simulasi","Matematika Diskrit A"],
+    "IoT" :["Logika Matematika A","Sistem Digital","Organisasi dan Arsitektur Komputer",
+        "Jaringan Komputer","Sistem Paralel dan Terdistribusi"]
+}

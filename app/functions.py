@@ -1,24 +1,32 @@
-import pandas as pd
-rule = pd.read_csv('app/rule.csv',sep=';')
+import json
+# rule = pd.read_csv('app/rule.csv',sep=';')
+rule = None
+with open('app/rule.json') as json_file:
+        rule = json.load(json_file)
 import requests
-import json 
+MAX_RATING = 5
 
-def getSummary(nim):
+def getNIM(nim):
     print('API Called :(')
-    response = requests.get('https://v2-api.sheety.co/387597a00c54c8555a31efa648221b3e/infoTa/formResponses1', headers={'Authorization': 'Bearer tupai-terbang'})
+    # response = requests.get('https://v2-api.sheety.co/387597a00c54c8555a31efa648221b3e/infoTa/formResponses1', headers={'Authorization': 'Bearer tupai-terbang'})
     assert response.status_code == 200
     assert type(nim) == int
     mks = [i for i in response.json()['formResponses1'] if i['nim'] == nim]
+    return mks
+def getSummary(nim):
+    mks = getNIM(nim)
+    # mks = [{'id': 2, 'timestamp': '19/07/2020 2:14:28', 'nim': 1301174068, 'kalkulusIb': 3, 'logikaMatematikaA': 4, 'dasarAlgoritmaDanPemrograman': 1, 'matematikaDiskritA': 3, 'kalkulusIib': 4, 'pemodelanBasisData': 2, 'sistemDigital': 4, 'strukturData': 2, 'matriksDanRuangVektor': 5, 'probabilitasDanStatistikaA': 2, 'pemrogramanBerorientasiObyekA': 5, 'analisisDanPerancanganPerangkatLunak': 2, 'sistemBasisData': 4, 'desainDanAnalisisAlgoritma': 4, 'organisasiDanArsitekturKomputer': 4, 'teoriBahasaDanAutomata': 2, 'jaringanKomputer': 3, 'kecerdasanBuatan': 2, 'sistemOperasiA': 4, 'pemrogramanWeb': 3, 'implementasiDanPengujianPerangkatLunak': 2, 'dasarPemodelanDanSimulasi': 3, 'interaksiManusiaDanKomputerA': 4, 'sistemParalelDanTerdistribusi': 3, 'pembelajaranMesin': 2, 'inginMemilihTrackTaYangMana?': 'Advanced AI'}]
     if len(mks) <= 0:
         return {"error": "NIM Not Found!"}
     else:
         mks = mks[0]
     summary = {}
-    for g in rule.groupby('Track'):
-        keys = [i.lower() for i in g[1].MK_support.values.tolist()]
+    for track in rule:
+        keys = [i.lower() for i in rule[track]]
         keys = [''.join([t.capitalize() if i != 0 else t for i,t in enumerate(m.split())]) for m in keys]
         val = [mks.get(key) for key in keys]
-        summary[g[0]] = sum(val)
+        summary[track] = sum(val) / (len(track) * MAX_RATING)
+    print(summary)
     total = sum(summary.values())
     for k in summary:
         summary[k] = (summary[k]/total)*100
@@ -38,3 +46,6 @@ def checkNIM(nim):
     with open('app/cache.json', 'w') as json_file:
         json.dump(data, json_file)
     return res
+
+if __name__ == "__main__":
+    print(getSummary(1301174068))
