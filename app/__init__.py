@@ -10,6 +10,7 @@ def create_app(test_config=None):
 
     # ======== Routing ============================= #
     # -------- Home -------------------------------- #
+    
     @app.route('/', methods=['GET'])
     def index():
         return render_template('layouts/index.html')

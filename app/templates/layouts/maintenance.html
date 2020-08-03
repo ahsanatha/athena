@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<form class="form-example " action="/check" method="post">
+    <!-- Input fields -->
+    <div class="form-group">
+        <input type="text" class="form-control username" id="nim" placeholder="NIM" name="nim">
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <button type="submit" class="btn btn-primary btn-customized ">Check</button>  
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

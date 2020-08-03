@@ -37,16 +37,7 @@ def getSummary(nim):
     # return {'Modelling and Simulation': 36.734693877551024, 'IOT': 32.6530612244898, 'Advanced AI': 30.612244897959183}
 
 def checkNIM(nim):
-    # data = []
-    # with open('app/cache.json') as json_file:
-    #     data = json.load(json_file)
-    # if str(nim) not in data.keys():
     res = getSummary(nim)
-    #     data[nim] = res
-    # else :
-    #     res = data[str(nim)]
-    # with open('app/cache.json', 'w') as json_file:
-    #     json.dump(data, json_file)
     return res
 
 if __name__ == "__main__":

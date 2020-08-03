@@ -1,0 +1,98 @@
+{
+  "Applied Data Science": [
+    "Visualisasi Data",
+    "Metode Numerik untuk Informatika",
+    "Komputasi Berkinerja Tinggi",
+    "Pemodelan dan Simulasi"
+  ],
+  "Recommender System & Social Media Analysis in Data Science": [
+    "Sistem Pemberi Rekomendasi",
+    "Visualisasi Data",
+    "Pemodelan dan Simulasi"
+  ],
+  "Data Science in Drug discovery, Bioinformatics and Materials ": [
+    "Pemrosesan Bahasa Alami",
+    "Penambangan Data",
+    "Analisis Jejaring Sosial",
+    "Pembelajaran Mesin",
+    "Pembelajaran Mesin lanjut"
+  ],
+  "Text Classification & People Analytic": [
+    "Visualisasi Data",
+    "Pemodelan dan Simulasi",
+    "Penambangan Teks",
+    "Pemrosesan Bahasa Alami"
+  ],
+  "Internet of Things": ["Jaringan Komputer", "IoT dengan Kemampuan Cerdas", "Mikrokontroler"],
+  "Security": ["Sistem Keamanan", "Jaringan Komputer", "Sistem Operasi"],
+  "Network": [
+    "Jaringan Komputer",
+    "Sistem Operasi",
+    "Jaringan Sensor Nirkabel",
+    "Software Defined Networks"
+  ],
+  "Embedded System": ["Organisasi dan Arsitektur Komputer", "Embedded System"],
+  "Sistem Adaptif dan Sosio-Informatik": [
+    "Kecerdasan Buatan",
+    "Pembelajaran Mesin",
+    "Representasi Pengetahuan",
+    "Sistem Berbasis Agen",
+    "Sistem Pemberi Rekomendasi",
+    "Analisis Jejaring Sosial"
+  ],
+  "Deep Learning Technology / Pembelajaran Mesin lanjut Technology": [
+    "Pembelajaran Mesin lanjut",
+    "Sistem Berbasis Agen",
+    "IoT dengan Kemampuan Cerdas",
+    "Penambangan Data",
+    "Visi Komputer"
+  ],
+  "Signal Image and Video Processing": [
+    "Kecerdasan Buatan",
+    "Pembelajaran Mesin",
+    "Pemrosesan Citra Digital",
+    "Sistem Pengenalan"
+  ],
+  "Multimedia Forensics and Data Security": [
+    "Forensik Digital",
+    "Keamanan Siber",
+    "Sistem Keamanan Cerdas",
+    "Pemrosesan Citra Digital",
+    "Statistika",
+    "Teori Peluang",
+    "Matematika Diskrit"
+  ],
+  "Intelligent and Computing": [
+    "Kecerdasan Buatan",
+    "Pembelajaran Mesin",
+    "Desain dan Analisis Algoritma",
+    "Matematika Diskrit",
+    "Logika Matematika",
+    "Teori Bahasa & Automata",
+    "Komputasi Finansial"
+  ],
+  "Data Science Fundamentals": [
+    "Sistem Basis Data",
+    "Penambangan Data",
+    "Pemrosesan Bahasa Alami"
+  ],
+  "Data Science Applications": [
+    "Pemrosesan Bahasa Alami",
+    "Penambangan Data",
+    "Pembelajaran Mesin",
+    "Pembelajaran Mesin lanjut"
+  ],
+  "Software Engineering": [
+    "RPL: Analisis Kebutuhan",
+    "RPL: Desain dan Implementasi",
+    "Verifikasi dan Validasi Perangkat Lunak",
+    "Pemrosesan Bahasa Alami"
+  ],
+  "Human Computer Interaction and Information System": [
+    "Interaksi Manusia Komputer",
+    "Statistika",
+    "Pemrograman Web",
+    "Desain Interaksi",
+    "Penambangan Data"
+  ]
+}
