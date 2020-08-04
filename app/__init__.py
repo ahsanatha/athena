@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template, redirect, request
-from app.functions import checkNIM
+from app.functions import checkNIM, getKelasProposal
 
 def create_app(test_config=None):
     """create and configure the app"""
@@ -22,6 +22,11 @@ def create_app(test_config=None):
     @app.route('/why', methods=['GET'])
     def why():
         return render_template('layouts/why.html')    
+    
+    @app.route('/form-proposal',methods=['GET'])
+    def fp():
+        res = getKelasProposal()
+        return render_template('layouts/form-proposal.html',res=res)
 
     @app.route('/check',methods=['POST'])
     def redirectCheck():

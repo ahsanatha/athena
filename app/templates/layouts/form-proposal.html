@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Check - {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<div class="col justify-content-start align-items-start my-3">
+    <table class="table table-striped">
+        <tbody>
+          {% for i in res %}
+          <tr>
+            <td><div class="checkbox">
+                <label><input type="checkbox" value={{i}}> {{i}}</label>
+              </div></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

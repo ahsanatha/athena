@@ -1,8 +1,12 @@
 import json
 # rule = pd.read_csv('app/rule.csv',sep=';')
 rule = None
+proposalrule = None
 with open('app/rule.json') as json_file:
-        rule = json.load(json_file)
+    rule = json.load(json_file)
+with open('app/newrule.json') as json_file:
+    proposalrule = json.load(json_file)
+
 import requests
 MAX_RATING = 5
 
@@ -40,5 +44,9 @@ def checkNIM(nim):
     res = getSummary(nim)
     return res
 
-if __name__ == "__main__":
-    print(getSummary(1301174068))
+def getKelasProposal():
+    temp = []
+    for i in proposalrule.values():
+        temp += i
+    res = list(set(temp))
+    return res
